@@ -127,15 +127,15 @@ export const companyData: CompanyInfoExtended = {
   whatsapp: "201114338503",
   email: "info@rahal-travel.com",
   address: {
-    ar: "مصر — القاهرة والمحافظات",
-    en: "Egypt — Cairo & Governorates",
+    ar: "مركز العدوه — شارع المركز، شرق الكوبري القديم، بجوار عيادة الدكتور عهدي حبيب، فوق محل المستر للملابس",
+    en: "Markaz El Adwa, El Markaz St., East of Old Bridge, Beside Dr. Ahdy Habib Clinic, Above El-Mister Clothing Store, Minya, Egypt",
   },
   workingHours: {
     ar: "السبت - الخميس: 9:00 ص - 10:00 م | الجمعة: 1:00 م - 9:00 م",
     en: "Sat - Thu: 9:00 AM - 10:00 PM | Fri: 1:00 PM - 9:00 PM",
   },
   socialLinks: {
-    facebook: "https://facebook.com",
+    facebook: "https://www.facebook.com/share/1CAoMyQp2T/",
     instagram: "https://instagram.com",
     tiktok: "https://tiktok.com",
   },
