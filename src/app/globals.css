@@ -1,26 +1,116 @@
 @import "tailwindcss";
 
+@theme {
+  --font-cairo: var(--font-cairo), sans-serif;
+  --font-inter: var(--font-inter), sans-serif;
+
+  /* Official Rahal Deep Navy & Royal Blue Palette */
+  --color-navy-950: #010100;
+  --color-navy-900: #02193d;
+  --color-navy-800: #022e5f;
+  --color-navy-700: #054d8b;
+  --color-navy-600: #0b68b3;
+  --color-navy-500: #0f98dc;
+  --color-navy-400: #38b4f2;
+
+  /* Official Rahal Metallic Gold Palette */
+  --color-gold-900: #744203;
+  --color-gold-800: #9a5b08;
+  --color-gold-700: #b26f12;
+  --color-gold-600: #c98720;
+  --color-gold-500: #f1bd48;
+  --color-gold-400: #f8e490;
+  --color-gold-300: #fbf0b5;
+  --color-gold-200: #fdf6d4;
+  --color-gold-100: #fefcf2;
+
+  /* Neutrals & Warm Accents */
+  --color-warm-white: #f4f4e9;
+  --color-surface-bg: #f8fafc;
+  --color-surface-card: #ffffff;
+  --color-surface-muted: #f1f5f9;
+
+  /* Text & Border Tokens */
+  --color-border-subtle: #e2e8f0;
+  --color-border-gold: rgba(201, 135, 32, 0.35);
+  --color-text-main: #02193d;
+  --color-text-sub: #334155;
+  --color-text-muted: #64748b;
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f8fafc;
+  --foreground: #02193d;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
+  direction: rtl;
 }
 
 body {
-  background: var(--background);
+  background-color: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-cairo), Arial, sans-serif;
+  overflow-x: hidden;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Rahal Signature Metallic & Royal Gradients */
+.bg-gradient-navy {
+  background: linear-gradient(135deg, #010100 0%, #02193d 45%, #022e5f 100%);
+}
+
+.bg-gradient-blue {
+  background: linear-gradient(135deg, #022e5f 0%, #054d8b 60%, #0f98dc 100%);
+}
+
+.bg-gradient-gold {
+  background: linear-gradient(135deg, #9a5b08 0%, #c98720 35%, #f1bd48 65%, #f8e490 100%);
+}
+
+.text-gradient-gold {
+  background: linear-gradient(135deg, #c98720 0%, #f1bd48 50%, #c98720 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Accessibility Focus States */
+:focus-visible {
+  outline: 2px solid #f1bd48;
+  outline-offset: 2px;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #c98720;
+}
+
+::selection {
+  background-color: #f1bd48;
+  color: #010100;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
