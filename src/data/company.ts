@@ -145,6 +145,8 @@ export const mainNavItems: NavItem[] = [
   { title: "الرئيسية", href: "/" },
   { title: "من نحن", href: "/about" },
   { title: "خدماتنا", href: "/services" },
+  { title: "دليل السفر", href: "/blog" },
   { title: "المعرض", href: "/gallery" },
   { title: "تواصل معنا", href: "/contact" },
 ];
+

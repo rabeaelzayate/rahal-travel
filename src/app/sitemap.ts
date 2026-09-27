@@ -1,5 +1,6 @@
 import { MetadataRoute } from "next";
 import { servicesData } from "@/data/services";
+import { travelArticles } from "@/data/articles";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://rahal-travel.com";
@@ -26,6 +27,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
+      url: `${baseUrl}/blog`,
+      lastModified: currentDate,
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
+    {
       url: `${baseUrl}/gallery`,
       lastModified: currentDate,
       changeFrequency: "weekly",
@@ -47,5 +54,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.85,
   }));
 
-  return [...staticRoutes, ...serviceRoutes];
+  // Dynamic Article / Guide Routes
+  const articleRoutes: MetadataRoute.Sitemap = travelArticles.map((article) => ({
+    url: `${baseUrl}/blog/${article.slug}`,
+    lastModified: new Date(article.updatedAt),
+    changeFrequency: "weekly",
+    priority: 0.8,
+  }));
+
+  return [...staticRoutes, ...serviceRoutes, ...articleRoutes];
 }
+

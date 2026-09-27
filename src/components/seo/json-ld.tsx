@@ -200,3 +200,49 @@ export function FaqJsonLd({
     />
   );
 }
+
+export function ArticleJsonLd({
+  title,
+  description,
+  url,
+  publishedAt,
+  updatedAt,
+  author,
+}: {
+  title: string;
+  description: string;
+  url: string;
+  publishedAt: string;
+  updatedAt: string;
+  author: string;
+}) {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: title,
+    description: description,
+    url: url.startsWith("http") ? url : `https://rahal-travel.com${url}`,
+    datePublished: publishedAt,
+    dateModified: updatedAt,
+    author: {
+      "@type": "Organization",
+      name: author,
+      url: "https://rahal-travel.com",
+    },
+    publisher: {
+      "@id": "https://rahal-travel.com/#organization",
+    },
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": url.startsWith("http") ? url : `https://rahal-travel.com${url}`,
+    },
+  };
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+    />
+  );
+}
+

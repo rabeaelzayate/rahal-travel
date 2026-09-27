@@ -4,6 +4,7 @@ import { ServicesSection } from "@/components/home/services-section";
 import { WhyRahalSection } from "@/components/home/why-rahal-section";
 import { DestinationsSection } from "@/components/home/destinations-section";
 import { QuickConsultationSection } from "@/components/home/quick-consultation-section";
+import { BlogPreviewSection } from "@/components/home/blog-preview-section";
 import { GalleryPreviewSection } from "@/components/home/gallery-preview-section";
 
 export default function HomePage() {
@@ -24,11 +25,15 @@ export default function HomePage() {
       {/* 5. Top Destinations (Data Driven) */}
       <DestinationsSection />
 
-      {/* 6. Quick Lead Consultation CTA */}
+      {/* 6. Travel Guides & Articles Preview (Content Cluster) */}
+      <BlogPreviewSection />
+
+      {/* 7. Quick Lead Consultation CTA */}
       <QuickConsultationSection />
 
-      {/* 7. Gallery Preview Grid */}
+      {/* 8. Gallery Preview Grid */}
       <GalleryPreviewSection />
     </div>
   );
 }
+

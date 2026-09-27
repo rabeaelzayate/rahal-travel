@@ -49,3 +49,25 @@ export interface CompanyInfo {
     tiktok?: string;
   };
 }
+
+export interface ArticleSection {
+  heading: string;
+  content: string[];
+}
+
+export interface ArticleItem {
+  id: string;
+  slug: string;
+  title: string;
+  excerpt: string;
+  metaDescription: string;
+  category: string;
+  tags: string[];
+  readTime: string;
+  publishedAt: string;
+  updatedAt: string;
+  author: string;
+  targetKeywords: string[];
+  sections: ArticleSection[];
+  relatedServices?: string[];
+}
